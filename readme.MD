@@ -2,7 +2,7 @@
 
 This Python program generates a special email forwarding address that allows you to send emails from your main email account without revealing your real email address to the recipient. The recipient will see your DuckDuckGo email alias as the sender, ensuring your identity remains protected.
 
-## How It Works?
+## How does it work?
 
 1. Enter your DuckDuckGo email alias.
 2. Provide the recipient's email address.
