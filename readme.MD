@@ -15,3 +15,22 @@ I created this program because Duckduckgo extenstion doesn't have this feature. 
 To know more about Duckduckgo email protection, go here: https://duckduckgo.com/duckduckgo-help-pages/email-protection/
 
 
+```mermaid
+flowchart TD
+    subgraph "Address Generation"
+    A[Duckduckgo email forwarding address generator] --> B[Input DuckDuckGo Email Alias]
+    B --> C[Input Recipient Email]
+    C --> D[Generate Forwarding Address]
+    end
+```
+
+ ```mermaid
+flowchart TD   
+    subgraph "Email Forwarding Process"
+    E[User's Primary Email]
+    E --> F[Forwarding Address]
+    F --> G[DuckDuckGo Service]
+    G --> H[Recipient's Email]
+    
+    end
+``` 
