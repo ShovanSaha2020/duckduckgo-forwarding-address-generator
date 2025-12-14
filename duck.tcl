@@ -3,24 +3,26 @@
 # Set window title
 wm title . "Email Formatter"
 
-# Define a big font
+# Define a big uniform font
 font create bigFont -family Helvetica -size 20
 
 # Label and entry for 'from' email
-label .lbl_from -text "Enter the 'from' email address:" -font bigFont
-entry .ent_from -font bigFont -width 30
+label .lbl_from -text "Enter the 'from' email address:" -font bigFont -anchor center
+entry .ent_from -font bigFont -width 30 -justify center
 pack .lbl_from .ent_from -padx 10 -pady 10
 
 # Label and entry for 'to' email
-label .lbl_to -text "Enter the 'to' email address:" -font bigFont
-entry .ent_to -font bigFont -width 30
+label .lbl_to -text "Enter the 'to' email address:" -font bigFont -anchor center
+entry .ent_to -font bigFont -width 30 -justify center
 pack .lbl_to .ent_to -padx 10 -pady 10
 
-# Text box for output (user can copy from here)
-label .lbl_result -text "Result:" -font bigFont
-text .txt_result -font bigFont -width 40 -height 2
-.txt_result configure -state disabled
+# Output label and text box
+label .lbl_result -text "Result:" -font bigFont -anchor center
+text .txt_result -font bigFont -width 40 -height 2 -wrap word -state disabled
 pack .lbl_result .txt_result -padx 10 -pady 10
+
+# Define a tag for centered text
+.txt_result tag configure center -justify center
 
 # Function to process emails
 proc process_emails {} {
@@ -36,7 +38,7 @@ proc process_emails {} {
     # Update result text box
     .txt_result configure -state normal
     .txt_result delete 1.0 end
-    .txt_result insert end $email
+    .txt_result insert end $email center
     .txt_result configure -state disabled
 }
 
@@ -49,9 +51,8 @@ proc reset_form {} {
     .txt_result configure -state disabled
 }
 
-# Buttons
-button .btn_submit -text "Submit" -command process_emails -font bigFont
-button .btn_reset -text "Reset" -command reset_form -font bigFont
-button .btn_quit -text "Quit" -command exit -font bigFont
+# Buttons (same size, centered text)
+button .btn_submit -text "Submit" -command process_emails -font bigFont -width 10
+button .btn_reset -text "Reset" -command reset_form -font bigFont -width 10
+button .btn_quit -text "Quit" -command exit -font bigFont -width 10
 pack .btn_submit .btn_reset .btn_quit -padx 10 -pady 10
-
