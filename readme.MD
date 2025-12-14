@@ -43,8 +43,7 @@ flowchart TD
     B --> C[Input Recipient Email]
     C --> D[Generate Forwarding Address]
     end
-
-
+```
 
 ### Email Forwarding Process
 ```mermaid
@@ -54,3 +53,4 @@ flowchart TD
     F --> G[DuckDuckGo Service]
     G --> H[Recipient's Email]
     end
+```
