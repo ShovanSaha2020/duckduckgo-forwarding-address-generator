@@ -16,9 +16,10 @@ fi
 if ! command -v wish >/dev/null 2>&1; then
     echo "Tcl/Tk is not installed. Installing it now..."
     sudo apt update
-    sudo apt install -y tk
+    sudo apt install -y tcl tk
 fi
 
 # Replace this shell process with the GUI application.
 exec wish "$script_dir/duck.tcl"
+
 

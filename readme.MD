@@ -21,7 +21,7 @@ The launcher checks for Tcl/Tk and installs it with Ubuntu's `apt` command when 
 
 ```bash
 sudo apt update
-sudo apt install -y tk
+sudo apt install -y tcl tk
 ```
 
 The `-y` flag confirms the package installation automatically. The launcher may ask for your administrator password and needs an internet connection the first time.
@@ -60,4 +60,5 @@ WSL needs GUI support. WSL2 with WSLg provides this automatically on supported W
 ## Official format
 
 See the [DuckDuckGo documentation](https://duckduckgo.com/duckduckgo-help-pages/email-protection/duck-addresses/how-do-i-compose-a-new-email/) for the official address format.
+
 
