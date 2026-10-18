@@ -4,7 +4,7 @@ A small Tcl/Tk application for generating the special recipient address used to 
 
 ## Requirements
 
-- Ubuntu or another Debian-based Linux distribution with `apt-get`
+- Ubuntu or another Debian-based Linux distribution with `apt`
 - A graphical session:
   - Ubuntu Desktop needs a working desktop display.
   - WSL2 needs WSLg, or an X server configured for GUI applications.
@@ -17,7 +17,14 @@ From the project directory, run:
 bash start.sh
 ```
 
-The launcher checks for Tcl/Tk and installs it with `apt-get` when it is missing. It may ask for your administrator password and needs an internet connection the first time.
+The launcher checks for Tcl/Tk and installs it with Ubuntu's `apt` command when it is missing:
+
+```bash
+sudo apt update
+sudo apt install -y tk
+```
+
+The `-y` flag confirms the package installation automatically. The launcher may ask for your administrator password and needs an internet connection the first time.
 
 After Tcl/Tk is installed, the same command starts the application. Users do not need to run `duck.tcl` directly.
 
@@ -38,7 +45,7 @@ The recipient's `@` is replaced with `_at_`, and the username from the personal 
 
 ## Troubleshooting
 
-### `apt-get: command not found`
+### `apt: command not found`
 
 This launcher supports Debian/Ubuntu systems. Install Tcl/Tk using your distribution's package manager, then run:
 

@@ -7,16 +7,16 @@ set -euo pipefail
 script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
 
 # This automatic installer currently targets Debian and Ubuntu systems.
-if ! command -v apt-get >/dev/null 2>&1; then
-    echo "This launcher supports Debian/Ubuntu systems with apt-get." >&2
+if ! command -v apt >/dev/null 2>&1; then
+    echo "This launcher supports Debian/Ubuntu systems with apt." >&2
     exit 1
 fi
 
 # "wish" is the Tcl/Tk interpreter. Install it only when it is missing.
 if ! command -v wish >/dev/null 2>&1; then
     echo "Tcl/Tk is not installed. Installing it now..."
-    sudo apt-get update
-    sudo apt-get install -y tk
+    sudo apt update
+    sudo apt install -y tk
 fi
 
 # Replace this shell process with the GUI application.
